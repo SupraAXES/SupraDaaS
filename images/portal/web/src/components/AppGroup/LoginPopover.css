@@ -1,0 +1,12 @@
+.connect-default-icon {
+    font-size: 19px;
+    font-family: "Microsoft YaHei", 微软雅黑;
+    font-weight: 500;
+    color: #ffffff;
+    line-height: 80px;
+    text-align: center;
+    width: 80px;
+    height: 80px;
+    background: #3296fa;
+    border-radius: 12px;
+}

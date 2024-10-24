@@ -1,0 +1,68 @@
+version: '3'
+
+services:
+  daas-portal:
+    image: supraaxes/supradaas-portal
+    volumes:
+      - /opt/supra/daas/logs:/opt/supra/logs
+      - /opt/supra/daas/cert:/opt/supra/cert
+    ports:
+      - "443:443"
+    depends_on:
+      - daas-admin
+  daas-admin:
+    image: supraaxes/supradaas-admin
+    volumes:
+      - /opt/supra/daas/files:/opt/supra/data/files
+      - /opt/supra/daas/logs:/opt/supra/logs
+      - /opt/supra/daas/conf:/opt/supra/config
+    environment:
+      - VM_NETWORK=supra_projectors
+      - VM_MANAGER_HOSTNAME=vm-manager
+      - GUACD_HOSTNAME=supra-agent
+      - POSTGRES_HOSTNAME=supra-db
+      - POSTGRES_PORT=5432
+      - POSTGRES_DATABASE=supra_db
+      - POSTGRES_USERNAME=supra
+      - POSTGRES_PASSWORD=supra
+    networks:
+      - default
+      - projectors
+    depends_on:
+      - supra-db
+      - vm-manager
+      - supra-agent
+  supra-db:
+    image: postgres
+    volumes:
+      - /opt/supra/daas/db:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER=supra
+      - POSTGRES_PASSWORD=supra
+      - POSTGRES_DB=supra_db
+  vm-manager:
+    image: supraaxes/supradaas-manager
+    volumes:
+      - /opt/supra/daas/vm/storage:/vm-storage
+      - /opt/supra/daas/vm/backup:/vm-backup
+      - /opt/supra/daas/vm/host:/supra-host
+      - /opt/supra/daas/conf:/supra/conf/app
+      - /opt/supra/daas/logs:/supra/logs
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      - VM_ADMIN_HOSTNAME=daas-admin
+      - VM_STORAGE_BASE=/opt/supra/daas/vm/storage
+      - SUPRA_HOST_BASE=/opt/supra/daas/vm/host
+      - SUPRA_PROJECTOR_IMAGE=supraaxes/projector-supra-vm
+  supra-agent:
+    image: supraaxes/supra-guacd
+    volumes:
+      -  /opt/supra/daas/files:/opt/supra/data/user_data
+    networks:
+      - default
+      - projectors
+networks:
+  default:
+    name: supradaas_network
+  projectors:
+    name: supra_projectors

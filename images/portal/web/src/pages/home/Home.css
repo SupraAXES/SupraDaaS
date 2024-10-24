@@ -1,0 +1,45 @@
+  .content-container {
+    background: url("../../assets/image/galaxy.jpg");
+    background-color: #26487b;
+    background-size: cover;
+    background-repeat: repeat;
+    background-attachment: fixed;
+    width: 100vw;
+    height: 100vh;
+    padding: 20px 8%;
+    overflow: scroll;
+  }
+  
+  .empty-container {
+    background-color: rgba(211, 211, 211, 0.25);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border-radius: 20px;
+    margin-top: 10px;
+  }
+  
+  .empty-image {
+    width: 150px;
+    height: 125px;
+    margin-bottom: 12px;
+    margin-top: 70px;
+  }
+  
+  .empty-message {
+    font-size: 14px;
+    font-family: "Microsoft YaHei", 微软雅黑;
+    font-weight: 400;
+    color: #ffffff;
+    line-height: 20px;
+    margin-bottom: 60px;
+    text-align: center;
+  }
+  
+  .empty-place-holder {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  

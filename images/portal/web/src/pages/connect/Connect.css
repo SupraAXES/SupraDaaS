@@ -1,0 +1,144 @@
+.display-root {
+	width: 100vw;
+	cursor: none;
+	flex-grow: 1;	
+  overflow: hidden;
+}
+
+.display {
+	position: relative;
+	width: 100vw;
+	flex-grow: 1;
+  overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.display-connected {
+	cursor: none;
+}
+
+.loading-message-bg {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+}
+
+.gray-bg {
+	background-color: rgba(196,196,196, 0.6);
+}
+
+.loading-message-root {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 60vw;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.loading-message {
+	text-align: center;
+	cursor: default;
+	user-select: none;
+	opacity: 0.7;
+	font-size: 20px;
+	color: #222;
+	word-break: break-all;
+	text-shadow: 1px  1px 0 rgba(255, 255, 255, 0.5);
+}
+
+.guac-hide-cursor {
+	cursor: url("../../assets/image/dot.gif"), default;
+}
+
+.container {
+	background: transparent;
+	padding: 0;
+	margin: 0;
+	overflow-x: hidden;
+	position: relative;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	padding-bottom: env(safe-area-inset-bottom);
+}
+
+.file-button-container {
+	width: 54px;
+	height: 54px;
+	position: absolute;
+	top: 50%;
+	right: -27px;
+	border-radius: 27px 0 0 27px;
+	transform: translate(0, -50%);
+	overflow: hidden;
+	transition: transform 0.5s;
+}
+
+.file-button-container:hover {
+	opacity: 0.7;
+}
+
+.file-button {
+	width: 27px;
+	height: 54px;
+	background-color: rgba(74, 133, 211, 0.7);
+}
+
+.file-button-icon {
+	width: 15px;
+	height: 20px;
+	position: absolute;
+	top: 50%;
+	left: 31%;
+	transform: translate(-50%, -50%);
+}
+
+.link-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.link-title {
+  text-align: center;
+  font-size: large;
+  font-weight: bold;
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+
+.link-message {
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.link-close {
+	margin-top: 10px;
+	text-align: center;
+}
+
+.resouce-link {
+  text-align: center;
+}
+
+.retry-btn {
+	margin-top: 20px;
+	font-size: 20px;
+	color: white;
+	cursor: pointer;
+	user-select: none;
+	width: 100px;
+	height: 36px;
+	line-height: 36px;
+	text-align: center;
+	border-radius: 6px;
+	background: #1890ff;
+}

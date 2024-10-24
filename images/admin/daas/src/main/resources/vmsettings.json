@@ -1,0 +1,5 @@
+{
+    "cpuSizes": ["2", "4", "8"],
+    "memorySizes": ["1G", "2G", "4G", "8G"],
+    "diskSizes": ["5G", "10G", "20G", "40G", "80G"]
+}

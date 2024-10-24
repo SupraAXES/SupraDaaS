@@ -1,0 +1,8 @@
+aiohttp
+jsonrpcserver
+jsonrpcclient
+pywinrm
+impacket==0.11.0
+psutil
+paramiko
+parallel-ssh

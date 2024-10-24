@@ -1,0 +1,11 @@
+{
+  "name": "Windows10-adm",
+  "osType": "windows-10",
+  "diskSize": "128G",
+  "access": [{"protocol": "rdp", "port": "3389"}],
+  "management": { "protocol": "rdp", "port": "5985", "interval": 10},
+  "userMgr": 1,
+  "adminName": "supra",
+  "adminPasswd": "supra",
+  "users": [{"user": "supra", "pass": "supra"}]
+}
