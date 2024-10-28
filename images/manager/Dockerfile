@@ -7,6 +7,8 @@ RUN apt update && apt install -y --no-install-recommends \
     ca-certificates \
     && rm -rf /var/lib/apt/lists/*
 
+
+COPY debian.sources /etc/apt/sources.list.d/debian.sources
 RUN apt update && apt upgrade -y \
     && apt install -y --no-install-recommends \
     python3 \
@@ -19,6 +21,7 @@ RUN apt update && apt upgrade -y \
 
 
 COPY requirements.txt requirements.txt
+RUN pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
 RUN pip install --break-system-packages --no-cache-dir -r requirements.txt && rm requirements.txt
 
 

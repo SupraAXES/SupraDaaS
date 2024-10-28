@@ -8,7 +8,8 @@ RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | gpg --dearmor -o /usr/sh
     && echo "deb [signed-by=/usr/share/keyrings/yarn-archive-keyring.gpg] https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list \
     && curl -fsSL https://deb.nodesource.com/setup_20.x | bash - \
     && apt update && apt install -y nodejs 
-RUN npm -g install yarn \
+RUN npm config set registry https://registry.npmmirror.com/ \
+    && npm -g install yarn \
     && yarn config set strict-ssl false
 
 WORKDIR /

@@ -9,6 +9,11 @@ SupraDaaS is built with Service-Oriented Architecture (SOA) on docker, with moun
 
 Users will access VMs all from Web portal on resource UI page (*https://SupraDaas-Address/*), and Administrators can manage VMs on the admin UI page (at *https://SupraDaas-Address/admin*).
 
+<div style="display: flex; justify-content: space-between;">
+  <img src="examples/SupraDaaS-admin.png" alt="Admin" style="width: 48%;"/>
+  <img src="examples/SupraDaaS-resources.png" alt="Resources" style="width: 48%;"/>
+</div>
+
 ### Mounts 
 - **Settings, /opt/supra/daas/conf**: configuration files  
     1. *vmSettings.json*: settings for options to *CPU Core*, *Memory* and *Disk Capacity* on the admin UI page. 
